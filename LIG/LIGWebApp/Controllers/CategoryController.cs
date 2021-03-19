@@ -1,4 +1,5 @@
-﻿using ProductManagment.BAL.DTO;
+﻿using LIGWebApp.AuthFilters;
+using ProductManagment.BAL.DTO;
 using ProductManagment.BAL.Repo;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace LIGWebApp.Controllers
 {
+    [GlobalAuthrization]
     public class CategoryController : Controller
     {
         readonly ICategoryRepository _repo;

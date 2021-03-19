@@ -1,4 +1,5 @@
-﻿using LIGWebApp.DependencyInjection;
+﻿using LIGWebApp.AuthFilters;
+using LIGWebApp.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace LIGWebApp
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			Bootstrapper.Initialise();
+
 		}
 	}
 }

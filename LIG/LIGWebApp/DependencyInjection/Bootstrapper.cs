@@ -28,6 +28,9 @@ namespace LIGWebApp.DependencyInjection
             //This is the important line to edit  
             container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<ICategoryRepository, CategoryRepository>();
+            container.RegisterType<ILoginRepository,LoginRepository>();
+
+     
             //container.RegisterType<IGenericRepository<Category>, GenericRepository<Category>>();
 
 

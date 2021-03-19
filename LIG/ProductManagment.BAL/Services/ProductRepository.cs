@@ -28,20 +28,32 @@ namespace ProductManagment.BAL.Services
 
 		public IEnumerable<ProductVM> GetAll()
 		{
-			var entity = _context.Products.Where(e=>e.IsActive==true && e.IsDeleted==false).ToList();
+			var entity = _context.Products.Where(e=>e.IsActive==true && e.IsDeleted==false).Include(e=>e.Category).ToList();
 			return entity.Select(e => new ProductVM()
 			{
+				Id=e.Id,
 				Price = e.Price,
 				ProducrName = e.ProducrName,
 				CategoryId = e.CategoryId,
+				CategoryName=e.Category.Name,
 				CreatedOn = e.CreatedOn,
 				UpdatedOn = e.UpdatedOn
 			});
 		}
 
-		public ProductVM GetById(object id)
+		public ProductVM GetById(int id)
 		{
-			throw new NotImplementedException();
+		 var entity=_context.Products.Where(e => e.Id ==id).FirstOrDefault();
+			return new ProductVM()
+			{
+				ProducrName = entity.ProducrName,
+				IsActive = entity.IsActive,
+				CreatedOn = entity.CreatedOn,
+				Price = entity.Price,
+				Id = entity.Id,
+				CategoryId=entity.CategoryId
+
+			};
 		}
 
 		public void Insert(ProductVM obj)
@@ -60,14 +72,44 @@ namespace ProductManagment.BAL.Services
 
 		public void Update(ProductVM obj)
 		{
-			throw new NotImplementedException();
+			var entity = _context.Products.Where(e => e.Id == obj.Id).FirstOrDefault();
+			if (entity!=null)
+			{
+				entity.Price = obj.Price;
+				entity.ProducrName = obj.ProducrName;
+				entity.IsActive = true;
+				entity.UpdatedOn = DateTime.Now;
+			}
 		}
-
-		
-
-		public void Delete(int id)
+		public void Delete(ProductVM obj)
 		{
-			throw new NotImplementedException();
+			var entity = _context.Products.Where(e => e.Id == obj.Id).FirstOrDefault();
+			entity.IsDeleted = true;
+		}
+		public void ArchiveProduct(List<int> ids)
+		{
+			var products = _context.Products.Where(e => ids.Contains(e.Id)).ToList();
+			foreach (var item in products)
+			{
+				var entity = products.Where(e => e.Id == item.Id).FirstOrDefault();
+				entity.IsDeleted = true;
+				Save();
+			}
+		}
+		public IEnumerable<ProductVM> SearchWithDate(DateTime date)
+		{
+			var entity = _context.Products.Where(e => e.IsActive == true 
+			&& e.IsDeleted == false && e.CreatedOn.Value.Date==date.Date).Include(e => e.Category).ToList();
+			return entity.Select(e => new ProductVM()
+			{
+				Id = e.Id,
+				Price = e.Price,
+				ProducrName = e.ProducrName,
+				CategoryId = e.CategoryId,
+				CategoryName = e.Category.Name,
+				CreatedOn = e.CreatedOn,
+				UpdatedOn = e.UpdatedOn
+			});
 		}
 	}
 }

@@ -10,10 +10,12 @@ namespace ProductManagment.BAL.Repo
     public interface IProductRepository
     {
         IEnumerable<ProductVM> GetAll();
-        ProductVM GetById(object id);
+        ProductVM GetById(int id);
         void Insert(ProductVM obj);
         void Update(ProductVM obj);
-        void Delete(int id);
+        void Delete(ProductVM obj);
+        void ArchiveProduct(List<int> ids);
+        IEnumerable<ProductVM> SearchWithDate(DateTime date);
         void Save();
     }
 }
