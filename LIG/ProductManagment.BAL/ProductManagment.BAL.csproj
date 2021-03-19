@@ -51,13 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\CategoryVM.cs" />
+    <Compile Include="DTO\ProductVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repo\IGenericRepository.cs" />
-    <Compile Include="Services\GenericRepository.cs" />
+    <Compile Include="Repo\ICategoryRepository.cs" />
+    <Compile Include="Repo\IProductRepository.cs" />
+    <Compile Include="Services\CategoryRepository.cs" />
+    <Compile Include="Services\ProductRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

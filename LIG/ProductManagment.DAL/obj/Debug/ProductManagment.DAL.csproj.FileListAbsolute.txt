@@ -1,0 +1,12 @@
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\ProductManagment.DAL.dll.config
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\ProductManagment.DAL.dll
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\ProductManagment.DAL.pdb
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\EntityFramework.dll
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\EntityFramework.xml
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\obj\Debug\ProductManagment.DAL.csproj.CoreCompileInputs.cache
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\obj\Debug\ProductManagment.DAL.csproj.CopyComplete
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\obj\Debug\ProductManagment.DAL.dll
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\obj\Debug\ProductManagment.DAL.pdb
+D:\Demos\LIG\LIGTask\LIG\ProductManagment.DAL\obj\Debug\ProductManagment.DAL.csprojAssemblyReference.cache
